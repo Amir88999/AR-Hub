@@ -17,6 +17,7 @@
       font-family: sans-serif;
     }
 
+    /* Fullscreen video background */
     video.bg {
       position: fixed;
       top: 0;
@@ -27,24 +28,44 @@
       z-index: -1;
     }
 
-    iframe.report {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      border: none;
-      z-index: 1;
+    /* Centered button overlay */
+    .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: orange;
     }
   </style>
 </head>
 <body>
 
-  <!-- Background video -->
+  <!-- Fullscreen video -->
   <video class="bg" autoplay muted loop playsinline>
     <source src="ar_edited.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
-  <!-- Embedded Looker Studio UI -->
+  <!-- Button to open Looker Studio report -->
   <div class="overlay">
     <a href="https://lookerstudio.google.com/reporting/d6272ff8-11d8-4941-a1ad-5c5660dfa7fd/page/p_57r1hkfrtd"
        target="_blank" class="btn">View AR Interface</a>
