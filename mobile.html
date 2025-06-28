@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Karakuri AR - Mobile</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    /* Background video */
+    video.bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 2rem 1rem;
+    }
+
+    .top-right {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 0.8rem;
+    }
+
+    .top-right a {
+      color: #ccc;
+      text-decoration: none;
+      padding: 0.3rem 0.7rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .button-column {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .btn {
+      background-color: #00bcd4;
+      color: black;
+      padding: 0.9rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #008ba3;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background video -->
+  <video class="bg" autoplay muted loop playsinline>
+    <source src="ar_edited.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Top right switch -->
+  <div class="top-right">
+    <a href="index.html">Desktop version</a>
+  </div>
+
+  <!-- Main container -->
+  <div class="container">
+    <h1>KARAKURI<br>AUGMENTED REALITY</h1>
+    <h2>Choose Karakuri Model:</h2>
+
+    <div class="button-column">
+      <a href="https://example.com/slider" class="btn">CRANK SLIDER</a>
+      <a href="https://example.com/pulley" class="btn">PULLEY KARAKURI</a>
+      <a href="https://example.com/seesaw" class="btn">SEE-SAW KARAKURI</a>
+      <a href="https://example.com/rotation" class="btn">ROTATION KARAKURI</a>
+      <a href="https://example.com/stroke" class="btn">SLIDE STROKE KARAKURI</a>
+    </div>
+  </div>
+
+</body>
+</html>
