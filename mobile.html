@@ -2,21 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Karakuri AR - Mobile</title>
+  <title>Karakuri AR Mobile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="ar.png">
   <style>
-    * {
+    html, body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
       height: 100%;
       font-family: Arial, sans-serif;
       overflow: hidden;
     }
 
-    /* Background video */
     video.bg {
       position: fixed;
       top: 0;
@@ -28,59 +25,32 @@
     }
 
     .container {
-      width: 100%;
-      height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
+      height: 100%;
       color: white;
-      padding: 2rem 1rem;
-    }
-
-    .top-right {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-size: 0.8rem;
-    }
-
-    .top-right a {
-      color: #ccc;
-      text-decoration: none;
-      padding: 0.3rem 0.7rem;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
+      text-align: center;
+      padding: 1.5rem;
     }
 
     h1 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-    }
-
-    h2 {
-      font-size: 1rem;
+      font-size: 2rem;
       margin-bottom: 1.5rem;
     }
 
-    .button-column {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      width: 100%;
-      max-width: 300px;
-    }
-
     .btn {
-      background-color: #00bcd4;
-      color: black;
-      padding: 0.9rem;
-      font-weight: bold;
+      background: #00bcd4;
+      margin: 0.5rem 0;
+      padding: 1rem 2rem;
       border: none;
       border-radius: 8px;
+      font-weight: bold;
+      color: black;
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      width: 100%;
+      max-width: 300px;
     }
 
     .btn:hover {
@@ -91,29 +61,18 @@
 </head>
 <body>
 
-  <!-- Background video -->
   <video class="bg" autoplay muted loop playsinline>
     <source src="ar_mobile.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
-  <!-- Top right switch -->
-  <div class="top-right">
-    <a href="index.html">Desktop version</a>
-  </div>
-
-  <!-- Main container -->
   <div class="container">
-    <h1>KARAKURI<br>AUGMENTED REALITY</h1>
-    <h2>Choose Karakuri Model:</h2>
-
-    <div class="button-column">
-      <a href="https://example.com/slider" class="btn">CRANK SLIDER</a>
-      <a href="https://example.com/pulley" class="btn">PULLEY KARAKURI</a>
-      <a href="https://example.com/seesaw" class="btn">SEE-SAW KARAKURI</a>
-      <a href="https://example.com/rotation" class="btn">ROTATION KARAKURI</a>
-      <a href="https://example.com/stroke" class="btn">SLIDE STROKE KARAKURI</a>
-    </div>
+    <h1>Karakuri AR Mobile</h1>
+    <a class="btn" href="https://example.com/seesaw">Seesaw AR</a>
+    <a class="btn" href="https://example.com/pulley">Pulley AR</a>
+    <a class="btn" href="https://example.com/slider">Slider Crank AR</a>
+    <a class="btn" href="https://example.com/rotation">Rotation AR</a>
+    <a class="btn" href="https://example.com/stroke">Slide Stroke AR</a>
   </div>
 
 </body>
