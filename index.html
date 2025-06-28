@@ -5,19 +5,18 @@
   <title>Karakuri AR Hub</title>
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html, body {
-      width: 100%;
       height: 100%;
+      font-family: Arial, sans-serif;
       overflow: hidden;
-      font-family: sans-serif;
     }
 
-    /* Fullscreen video background */
+    /* Background Video */
     video.bg {
       position: fixed;
       top: 0;
@@ -28,47 +27,102 @@
       z-index: -1;
     }
 
-    /* Centered button overlay */
-    .overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 2;
+    .container {
+      width: 100%;
+      height: 100%;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       text-align: center;
+      color: white;
+      padding: 2rem;
     }
 
-    .btn {
-      padding: 1rem 2rem;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: #fff;
-      border-radius: 8px;
-      font-size: 1.2rem;
+    .top-right {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .top-right a {
+      color: #ccc;
       text-decoration: none;
+      padding: 0.4rem 0.8rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(150px, 220px));
+      grid-gap: 1rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .button-grid .btn {
+      background-color: #00bcd4;
+      color: black;
+      padding: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       transition: background-color 0.3s ease;
     }
 
     .btn:hover {
-      background-color: orange;
+      background-color: #008ba3;
+      color: white;
+    }
+
+    @media (max-width: 800px) {
+      .button-grid {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Fullscreen video -->
+  <!-- Background video -->
   <video class="bg" autoplay muted loop playsinline>
     <source src="ar_edited.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
-  <!-- Button to open Looker Studio report -->
-  <div class="overlay">
-    <a href="https://lookerstudio.google.com/reporting/d6272ff8-11d8-4941-a1ad-5c5660dfa7fd/page/p_57r1hkfrtd"
-       target="_blank" class="btn">View AR Interface</a>
+  <!-- Top right mobile switch -->
+  <div class="top-right">
+    <a href="mobile.html">Switch to Mobile view</a>
+  </div>
+
+  <!-- Main container -->
+  <div class="container">
+    <h1>KARAKURI<br>AUGMENTED REALITY</h1>
+    <h2>Choose Karakuri Model:</h2>
+
+    <div class="button-grid">
+      <a href="https://example.com/slider" class="btn">CRANK SLIDER</a>
+      <a href="https://example.com/pulley" class="btn">PULLEY KARAKURI</a>
+      <a href="https://example.com/seesaw" class="btn">SEE-SAW KARAKURI</a>
+      <a href="https://example.com/rotation" class="btn">ROTATION KARAKURI</a>
+      <a href="https://example.com/stroke" class="btn">SLIDE STROKE KARAKURI</a>
+    </div>
   </div>
 
 </body>
