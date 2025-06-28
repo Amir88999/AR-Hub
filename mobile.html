@@ -35,6 +35,22 @@
       padding: 1.5rem;
     }
 
+    .top-right {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 0.9rem;
+      z-index: 1;
+    }
+
+    .top-right a {
+      color: #ccc;
+      text-decoration: none;
+      padding: 0.4rem 0.8rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+    }
+
     h1 {
       font-size: 2rem;
       margin-bottom: 1.5rem;
@@ -61,11 +77,18 @@
 </head>
 <body>
 
+  <!-- Background Video -->
   <video class="bg" autoplay muted loop playsinline>
     <source src="ar_mobile.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
+  <!-- Switch to desktop -->
+  <div class="top-right">
+    <a href="index.html">Switch to Desktop View</a>
+  </div>
+
+  <!-- Content -->
   <div class="container">
     <h1>Karakuri AR Mobile</h1>
     <a class="btn" href="https://example.com/seesaw">Seesaw AR</a>
