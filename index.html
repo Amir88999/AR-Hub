@@ -65,9 +65,9 @@
 
     .button-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 220px));
+      grid-template-columns: repeat(3, minmax(150px, 220px));
+      grid-gap: 1rem;
       justify-content: center;
-      gap: 1rem;
       margin-top: 1rem;
     }
 
@@ -104,6 +104,12 @@
     .download-btn:hover {
       background-color: rgba(255, 255, 255, 0.4);
       color: black;
+    }
+
+    @media (max-width: 800px) {
+      .button-grid {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+      }
     }
   </style>
 </head>
