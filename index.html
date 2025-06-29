@@ -66,9 +66,17 @@
     .button-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(150px, 220px));
-      grid-gap: 1rem;
+      gap: 1rem;
       justify-content: center;
       margin-top: 1rem;
+    }
+
+    .row {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
     }
 
     .btn {
@@ -110,6 +118,11 @@
       .button-grid {
         grid-template-columns: repeat(2, minmax(150px, 1fr));
       }
+
+      .row {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
@@ -132,6 +145,9 @@
       <a href="https://amir88999.github.io/crank-slider-arbedk6/" class="btn" target="_blank" rel="noopener noreferrer">CRANK SLIDER</a>
       <a href="https://amir88999.github.io/pulley-arw1a736/" class="btn" target="_blank" rel="noopener noreferrer">PULLEY KARAKURI</a>
       <a href="https://amir88999.github.io/see-saw-arnqgbi/" class="btn" target="_blank" rel="noopener noreferrer">SEE-SAW KARAKURI</a>
+    </div>
+
+    <div class="row">
       <a href="https://amir88999.github.io/rotation-arhgb9di/" class="btn" target="_blank" rel="noopener noreferrer">ROTATION KARAKURI</a>
       <a href="https://amir88999.github.io/slide-stroke-arj87oho/" class="btn" target="_blank" rel="noopener noreferrer">SLIDE STROKE KARAKURI</a>
     </div>
