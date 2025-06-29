@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Karakuri AR - Mobile</title>
   <style>
     * {
@@ -23,6 +24,17 @@
       width: 100vw;
       height: 100vh;
       object-fit: cover;
+      z-index: -1;
+    }
+
+    body.no-video::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('fallback_mobile.jpg') center center / cover no-repeat;
       z-index: -1;
     }
 
@@ -103,26 +115,12 @@
       background-color: rgba(255, 255, 255, 0.4);
       color: black;
     }
-
-    /* Fallback background for mobile */
-    @media (max-device-width: 768px) {
-      video.bg { display: none; }
-      body::before {
-        content: "";
-        position: fixed;
-        top: 0; left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: url('fallback_mobile.jpg') center center / cover no-repeat;
-        z-index: -1;
-      }
-    }
   </style>
 </head>
 <body>
 
   <video class="bg" autoplay muted loop playsinline>
-    <source src="ar_edited.mp4" type="video/mp4">
+    <source src="ar_edited.mp4" type="video/mp4" />
   </video>
 
   <div class="top-right">
@@ -130,7 +128,7 @@
   </div>
 
   <div class="container">
-    <h1>KARAKURI<br>AUGMENTED REALITY</h1>
+    <h1>KARAKURI<br />AUGMENTED REALITY</h1>
     <h2>Choose Karakuri Model:</h2>
 
     <div class="button-column">
@@ -144,5 +142,12 @@
     <a href="ar_marker.pdf" download class="download-btn">Download AR Marker</a>
   </div>
 
+  <script>
+    // Add "no-video" class if video fails to play
+    const vid = document.querySelector("video");
+    vid.onerror = () => {
+      document.body.classList.add("no-video");
+    };
+  </script>
 </body>
 </html>
