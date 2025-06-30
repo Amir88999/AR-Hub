@@ -1,51 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Crank Slider Karakuri</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       color: white;
-      text-align: center;
       background-size: cover;
       background-position: center;
     }
     .content {
       padding: 2rem;
+      background: rgba(0, 0, 0, 0.65);
       max-width: 800px;
-      margin: auto;
-      background-color: rgba(0,0,0,0.5);
+      margin: 10vh auto;
+      border-radius: 10px;
+      text-align: center;
     }
-    img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 1.5rem;
+    .karakuri-img {
+      width: 100%;
+      max-width: 400px;
+      margin: 1.5rem auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
     }
-    .back-button {
+    .ar-btn {
+      display: inline-block;
       margin-top: 2rem;
-      padding: 0.6rem 1.2rem;
-      background: #00bcd4;
+      padding: 0.8rem 1.5rem;
+      background-color: #00bcd4;
       color: black;
       font-weight: bold;
       text-decoration: none;
-      border-radius: 6px;
-      display: inline-block;
+      border-radius: 8px;
     }
   </style>
+  <script>
+    window.onload = () => {
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      document.body.style.backgroundImage = isMobile
+        ? "url('fallback_mobile.jpg')"
+        : "url('fallback_desktop.jpg')";
+    };
+  </script>
 </head>
 <body>
-  <script>
-    document.body.style.backgroundImage = window.innerWidth <= 768 ? "url('fallback_mobile.png')" : "url('fallback_desktop.png')";
-  </script>
-
   <div class="content">
     <h1>Crank Slider Karakuri</h1>
-    <img src="crank-slider.png" alt="Crank Slider Karakuri">
-    <p>The Crank-Slider mechanism is one of the most commonly used mechanical linkages that converts rotary motion into linear motion. It consists of a rotating crank attached to a connecting rod which slides a piston or slider back and forth along a straight path. This simple yet powerful mechanism forms the basis of many engines and machines, especially in the automotive world.</p>
-    <p>In Karakuri-style automation, the crank-slider is celebrated for its rhythmic motion and reliable conversion of energy. It is often used to drive simple, cyclic tasks without requiring external energy input. Its historical use in Japanese wooden automata demonstrates how traditional mechanics can achieve precision and elegance with minimal complexity.</p>
-    <a href="index.html" class="back-button">← Back to Hub</a>
+    <img src="crank-slider.png" alt="Crank Slider" class="karakuri-img">
+    <p>The crank-slider mechanism is a classic system that transforms rotational motion into linear motion. Commonly found in internal combustion engines, this setup plays a major role in Karakuri for moving parts back and forth using just rotary input like a handle or gear.</p>
+    <p>In Karakuri applications, it's admired for its simplicity and repeatability. Without needing electricity, it can push, pull, or lift objects with rhythm and consistency, making it perfect for lean manufacturing scenarios.</p>
+    <a href="crank-slider-ar.html" class="ar-btn">Launch AR</a>
   </div>
 </body>
 </html>
