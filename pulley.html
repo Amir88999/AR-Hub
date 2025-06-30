@@ -1,30 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Pulley Karakuri</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       color: white;
-      text-align: center;
       background-size: cover;
       background-position: center;
     }
+
     .content {
       padding: 2rem;
+      background: rgba(0, 0, 0, 0.65);
       max-width: 800px;
-      margin: auto;
-      background-color: rgba(0,0,0,0.5);
+      margin: 10vh auto 2rem auto;
+      border-radius: 10px;
+      text-align: center;
     }
-    img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 1.5rem;
+
+    .karakuri-img {
+      width: 100%;
+      max-width: 400px;
+      margin: 1.5rem auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
     }
-    .back-button {
+
+    .ar-btn {
+      display: inline-block;
       margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #00bcd4;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    .back-button-container {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .back-button {
+      margin-top: 1rem;
       padding: 0.6rem 1.2rem;
       background: #00bcd4;
       color: black;
@@ -34,17 +57,25 @@
       display: inline-block;
     }
   </style>
+  <script>
+    window.onload = () => {
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      document.body.style.backgroundImage = isMobile
+        ? "url('fallback_mobile.jpg')"
+        : "url('fallback_desktop.jpg')";
+    };
+  </script>
 </head>
 <body>
-  <script>
-    document.body.style.backgroundImage = window.innerWidth <= 768 ? "url('fallback_mobile.png')" : "url('fallback_desktop.png')";
-  </script>
-
   <div class="content">
     <h1>Pulley Karakuri</h1>
-    <img src="pulley.png" alt="Pulley Karakuri">
-    <p>The Pulley mechanism is a fundamental machine that helps redirect force and distribute weight. In its simplest form, it consists of a wheel and a rope. More complex systems use multiple pulleys to reduce the effort required to lift heavy objects. In Karakuri systems, pulleys enable smooth and precise motion control with minimal energy.</p>
-    <p>Historically, Japanese craftsmen used pulleys in Karakuri dolls to transfer motion discreetly and elegantly across different components. The use of gravity and counterweights, often hidden within the doll’s structure, helped create lifelike and autonomous movements. Pulleys continue to symbolize mechanical simplicity and efficiency.</p>
+    <img src="pulley.png" alt="Pulley Karakuri" class="karakuri-img">
+    <p>The pulley system is one of the simplest mechanical devices used in Karakuri mechanisms. By redirecting the path of a force, pulleys allow weights or objects to be lifted or moved with minimal effort, using nothing more than strings or belts.</p>
+    <p>In Karakuri, pulleys are often used to create smooth and silent motion transfer. Their passive nature makes them ideal for repetitive motion that requires synchronization between two components, contributing to sustainable and power-free automation.</p>
+    <a href="pulley-ar.html" class="ar-btn">Launch AR</a>
+  </div>
+
+  <div class="back-button-container">
     <a href="index.html" class="back-button">← Back to Hub</a>
   </div>
 </body>
