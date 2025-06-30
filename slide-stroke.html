@@ -2,19 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Slide Stroke Karakuri</title>
   <style>
-    body { font-family: sans-serif; padding: 2rem; background: #f0f0f0; text-align: center; }
-    img { width: 80%; max-width: 400px; margin: 1rem 0; }
-    a.button { display: inline-block; padding: 0.75rem 1.5rem; background: #007BFF; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; }
-    a.button:hover { background: #0056b3; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .content {
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.65);
+      max-width: 800px;
+      margin: 10vh auto 2rem auto;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .karakuri-img {
+      width: 100%;
+      max-width: 400px;
+      margin: 1.5rem auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .ar-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #00bcd4;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    .back-button-container {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .back-button {
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: #00bcd4;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      display: inline-block;
+    }
   </style>
+  <script>
+    window.onload = () => {
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      document.body.style.backgroundImage = isMobile
+        ? "url('fallback_mobile.jpg')"
+        : "url('fallback_desktop.jpg')";
+    };
+  </script>
 </head>
 <body>
-  <h1>Slide Stroke Karakuri</h1>
-  <img src="images/slide-stroke-placeholder.jpg" alt="Slide Stroke Mechanism">
-  <p>Slide stroke mechanisms produce linear reciprocating motion. Often used in feeders or automation parts, they provide precise movement along a straight path.</p>
-  <a href="https://amir88999.github.io/slide-stroke-arj87oho/" class="button" target="_blank">View in AR</a>
+  <div class="content">
+    <h1>Slide Stroke Karakuri</h1>
+    <img src="slide-stroke.png" alt="Slide Stroke Karakuri" class="karakuri-img">
+    <p>Slide stroke mechanisms are linear-motion-based systems where an object slides along a track or guide. This mechanism is used in Karakuri to create smooth and repeatable forward-backward or up-down movements.</p>
+    <p>Slide strokes are especially helpful in tasks like pushing boxes or aligning components. They rely on manual or gravitational forces and are designed for accuracy without the need for electronics or air pressure.</p>
+    <a href="slide-stroke-ar.html" class="ar-btn">Launch AR</a>
+  </div>
+
+  <div class="back-button-container">
+    <a href="index.html" class="back-button">← Back to Hub</a>
+  </div>
 </body>
 </html>
