@@ -1,70 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Crank Slider Karakuri</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
       font-family: Arial, sans-serif;
+      overflow: hidden;
       color: white;
+    }
+
+    body {
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
     }
-    .content {
+
+    .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
       padding: 2rem;
-      background: rgba(0, 0, 0, 0.65);
-      max-width: 800px;
-      margin: 10vh auto;
-      border-radius: 10px;
       text-align: center;
+      background-color: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
     }
-    .karakuri-img {
-      width: 100%;
-      max-width: 400px;
-      margin: 1.5rem auto;
-      display: block;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    img.karakuri-image {
+      max-width: 250px;
+      height: auto;
+      margin-bottom: 1.5rem;
       border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      border: 2px solid white;
     }
-    .back-button {
+
+    p {
+      max-width: 700px;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .button-group {
       margin-top: 2rem;
-      padding: 0.6rem 1.2rem;
-      background: #00bcd4;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      background-color: #00bcd4;
       color: black;
+      padding: 0.8rem 1.5rem;
       font-weight: bold;
       text-decoration: none;
       border-radius: 6px;
-      display: inline-block;
+      font-size: 1rem;
+      transition: background-color 0.3s;
     }
-    .ar-btn {
-      display: inline-block;
-      margin-top: 2rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #00bcd4;
-      color: black;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
+
+    .btn:hover {
+      background-color: #008ba3;
+      color: white;
     }
   </style>
-  <script>
-    window.onload = () => {
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-      document.body.style.backgroundImage = isMobile
-        ? "url('fallback_mobile.jpg')"
-        : "url('fallback_desktop.jpg')";
-    };
-  </script>
 </head>
 <body>
-  <div class="content">
+  <script>
+    // Choose background image based on device
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    document.body.style.backgroundImage = `url('${isMobile ? 'fallback_mobile.png' : 'fallback_desktop.png'}')`;
+  </script>
+
+  <div class="container">
     <h1>Crank Slider Karakuri</h1>
-    <img src="crank-slider.png" alt="Crank Slider" class="karakuri-img">
-    <p>The crank-slider mechanism is a classic system that transforms rotational motion into linear motion. Commonly found in internal combustion engines, this setup plays a major role in Karakuri for moving parts back and forth using just rotary input like a handle or gear.</p>
-    <p>In Karakuri applications, it's admired for its simplicity and repeatability. Without needing electricity, it can push, pull, or lift objects with rhythm and consistency, making it perfect for lean manufacturing scenarios.</p>
-    <a href="crank-slider-ar.html" class="ar-btn">Launch AR</a>
-    <a href="index.html" class="back-button">← Back to Hub</a>
+    <img src="crank-slider.png" alt="Crank Slider Karakuri" class="karakuri-image" />
+
+    <p>
+      The crank slider mechanism is a classic example of converting rotary motion into linear motion. 
+      Widely used in engines and mechanical devices, this mechanism uses a rotating crank attached to 
+      a slider that moves back and forth along a straight path.
+    </p>
+    <p>
+      In Karakuri applications, this mechanism is often used to animate dolls, open compartments, or 
+      perform repetitive tasks. It embodies simplicity and reliability, making it a favorite in both 
+      traditional and modern mechanical design.
+    </p>
+
+    <div class="button-group">
+      <a href="crank-slider-ar.html" class="btn">Launch AR</a>
+      <a href="index.html" class="btn">← Back to Hub</a>
+    </div>
   </div>
 </body>
 </html>
