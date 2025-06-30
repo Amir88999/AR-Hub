@@ -49,11 +49,20 @@
     }
     h1 {
       font-size: 3rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
+    .intro-box {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      max-width: 600px;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
     }
     h2 {
       font-size: 1.2rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
     .button-grid {
       display: grid;
@@ -106,21 +115,32 @@
   <video class="bg" autoplay muted loop playsinline>
     <source src="ar_edited.mp4" type="video/mp4">
   </video>
+
   <div class="top-right">
     <a href="mobile.html">Switch to Mobile view</a>
   </div>
+
   <div class="container">
     <h1>KARAKURI<br>AUGMENTED REALITY</h1>
+
+    <div class="intro-box">
+      <p><strong>Karakuri</strong> are simple Japanese mechanical systems that utilize springs, weights, or gravity, without any motors or electricity to operate.</p>
+      <p>This project integrates <strong>five</strong> of the basic Karakuri models into Web-based Augmented Reality for better understanding and education purposes.</p>
+    </div>
+
     <h2>Choose Karakuri Model:</h2>
+
     <div class="button-grid">
       <a href="crank-slider.html" class="btn">CRANK SLIDER KARAKURI</a>
       <a href="pulley.html" class="btn">PULLEY KARAKURI</a>
       <a href="see-saw.html" class="btn">SEE-SAW KARAKURI</a>
     </div>
+
     <div class="row">
       <a href="rotation.html" class="btn">ROTATION KARAKURI</a>
       <a href="slide-stroke.html" class="btn">SLIDE STROKE KARAKURI</a>
     </div>
+
     <a href="ar_marker.pdf" download class="download-btn">Download AR Marker</a>
   </div>
 </body>
