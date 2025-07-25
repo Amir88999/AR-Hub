@@ -5,21 +5,15 @@
   <link rel="apple-touch-icon" href="ar.png">
   <link rel="shortcut icon" href="ar.png" type="image/png">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Karakuri AR - Mobile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karakuri AR Hub</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body {
       height: 100%;
       font-family: Arial, sans-serif;
       overflow: hidden;
     }
-
     video.bg {
       position: fixed;
       top: 0;
@@ -29,7 +23,6 @@
       object-fit: cover;
       z-index: -1;
     }
-
     .container {
       width: 100%;
       height: 100%;
@@ -39,109 +32,92 @@
       align-items: center;
       text-align: center;
       color: white;
-      padding: 1.5rem 1rem;
+      padding: 2rem;
     }
-
     .top-right {
       position: absolute;
       top: 1rem;
       right: 1rem;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
     }
-
     .top-right a {
       color: #ccc;
       text-decoration: none;
-      padding: 0.3rem 0.7rem;
+      padding: 0.4rem 0.8rem;
       background-color: rgba(255, 255, 255, 0.1);
       border-radius: 8px;
     }
-
     h1 {
-      font-size: 1.8rem;
+      font-size: 3rem;
       margin-bottom: 0.8rem;
     }
-
-    h2 {
-      font-size: 1rem;
-      margin-top: 1.2rem;
-      margin-bottom: 1.2rem;
-    }
-
     .intro-box {
       background: rgba(0, 0, 0, 0.5);
       border-radius: 10px;
-      padding: 0.9rem 1rem;
-      max-width: 340px;
-      font-size: 0.82rem;
-      line-height: 1.3;
+      padding: 1rem 1.5rem;
+      max-width: 600px;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
     }
-
-    .button-column {
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(150px, 220px));
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    .row {
       display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      width: 100%;
-      max-width: 260px;
-      margin-top: 0.5rem;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
     }
-
     .btn {
       background-color: #00bcd4;
       color: black;
-      padding: 0.7rem;
-      font-size: 0.85rem;
+      padding: 1rem;
       font-weight: bold;
       border: none;
       border-radius: 8px;
       text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       transition: background-color 0.3s ease;
     }
-
     .btn:hover {
       background-color: #008ba3;
       color: white;
     }
-
     .download-btn {
-      margin-top: 1.2rem;
-      font-size: 0.8rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      padding: 0.6rem 1.2rem;
       background-color: rgba(255, 255, 255, 0.15);
       color: white;
       border-radius: 6px;
       text-decoration: none;
-      text-align: center;
-      padding: 0.5rem 0.8rem;
       transition: background-color 0.3s;
     }
-
     .download-btn:hover {
       background-color: rgba(255, 255, 255, 0.4);
       color: black;
     }
-
-    @media (max-device-width: 768px) {
-      video.bg { display: none; }
-      body::before {
-        content: "";
-        position: fixed;
-        top: 0; left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: url('fallback_mobile.jpg') center center / cover no-repeat;
-        z-index: -1;
-      }
-    }
   </style>
 </head>
 <body>
-
   <video class="bg" autoplay muted loop playsinline>
     <source src="ar_edited.mp4" type="video/mp4">
   </video>
 
   <div class="top-right">
-    <a href="index.html">Desktop version</a>
+    <a href="mobile.html">Switch to Mobile view</a>
   </div>
 
   <div class="container">
@@ -149,21 +125,23 @@
 
     <div class="intro-box">
       <p><strong>Karakuri</strong> are simple Japanese mechanical systems that utilize springs, weights, or gravity, without any motors or electricity to operate.</p>
-      <p>This project integrates <strong>five</strong> of the basic Karakuri models into Web-based Augmented Reality for better understanding and education purposes.   </p>
+      <p>This project integrates <strong>five</strong> of the basic Karakuri models into Web-based Augmented Reality for better understanding and education purposes.</p>
     </div>
 
     <h2>Let's begin! Please choose the Karakuri:</h2>
 
-    <div class="button-column">
-      <a href="crank-slider.html" class="btn" target="_blank">CRANK SLIDER KARAKURI</a>
-      <a href="pulley.html" class="btn" target="_blank">PULLEY KARAKURI</a>
-      <a href="see-saw.html" class="btn" target="_blank">SEE-SAW KARAKURI</a>
-      <a href="rotation.html" class="btn" target="_blank">ROTATION KARAKURI</a>
-      <a href="slide-stroke.html" class="btn" target="_blank">SLIDE STROKE KARAKURI</a>
+    <div class="button-grid">
+      <a href="crank-slider.html" class="btn">CRANK SLIDER KARAKURI</a>
+      <a href="pulley.html" class="btn">PULLEY KARAKURI</a>
+      <a href="see-saw.html" class="btn">SEE-SAW KARAKURI</a>
+    </div>
+
+    <div class="row">
+      <a href="rotation.html" class="btn">ROTATION KARAKURI</a>
+      <a href="slide-stroke.html" class="btn">SLIDE STROKE KARAKURI</a>
     </div>
 
     <a href="ar_marker.pdf" download class="download-btn">Download AR Marker</a>
   </div>
-
 </body>
 </html>
